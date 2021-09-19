@@ -1,6 +1,6 @@
 [submodule "output"]
 	path = output
-	url = https://github.com/blademaw/blademaw.github.io
+	url = https://github.com/blademaw/blademaw.github.io.git
 [submodule "plugins/ipynb"]
 	path = plugins/ipynb
 	url = git://github.com/danielfrg/pelican-ipynb.git
