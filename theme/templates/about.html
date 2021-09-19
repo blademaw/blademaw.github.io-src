@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }}{% endblock %}
+{% block headerimg %}{% if page.headerimg %}{{ page.headerimg }}{% else %}{{ DEFAULT_HEADER_BG }}{% endif %}{% endblock %}
+
+{% block content %}
+
+<div class="container post">
+    <article>
+        <header class="about">
+          <h1>{{ page.title }}</h1>
+          {% if page.date %}
+          <time datetime="page.date.isoformat()" pubdate>{{ page.locale_date }}</time>
+          {% endif %}
+	  <div class="social-links">
+	    <ul>
+	      {% if AUTHOR_BLOG %}
+	      <li><a href="{{ AUTHOR_BLOG }}" rel="me">blog</a></li>
+              {% endif %}
+	      {% if AUTHOR_CV %}
+	      <li><a href="{{ AUTHOR_CV }}" rel="me">CV</a></li>
+	      {% endif %}
+        {% if GITHUB_USERNAME %}
+	      <li><a class="fab fa-github" href="http://github.com/{{ GITHUB_USERNAME }}" rel="me"></a></li>
+              {% endif %}
+        {% if LINKED_IN %}
+	      <li><a class="fab fa-linkedin" href="{{ LINKED_IN }}" rel="me"></a></li>
+	      {% endif %}
+        {% if GOODREADS %}
+	      <li><a class="fab fa-goodreads" href="{{ GOODREADS }}" rel="me"></a></li>
+	      {% endif %}
+	    </ul>
+        </header>
+
+        <div class="article_content">
+            {{ page.content }}
+        </div>
+
+    </article>
+</div>
+{% endblock %}
