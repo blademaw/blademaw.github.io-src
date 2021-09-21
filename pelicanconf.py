@@ -39,12 +39,12 @@ DEFAULT_PAGINATION = 10
 THEME = './theme/'
 
 MARKUP = ('md', )
-LIQUID_TAGS = ["img", "literal", "video", "include_code", "notebook"]
+
+PLUGINS = ['render_math', 'liquid_tags.img', 'liquid_tags.notebook']
+PLUGIN_PATHS = ['./plugins/pelican-plugins']
+# LIQUID_TAGS = ["literal", "video", "include_code"]
 LIQUID_CONFIGS = (("IGNORE_FILES", ".ipynb_checkpoints", ""), ("CODE_DIR", "features/code", ""), ("NOTEBOOK_DIR", "features/notebooks", "")
 ) #
-
-# from pelican_jupyter import liquid as nb_liquid
-PLUGINS = ['render_math', 'liquid_tags']
 
 ENABLE_MATHJAX = True # testing this
 EXTRA_HEADER = open('_nb_header.html', encoding='utf-8').read()
@@ -55,7 +55,8 @@ GITHUB_USERNAME = 'blademaw'
 LINKED_IN = 'https://www.linkedin.com/in/jack-roy-oliver/'
 GOODREADS = 'https://www.goodreads.com/user/show/104565077-jack-oliver'
 AUTHOR_BLOG = 'http://blademaw.github.io'
-AUTHOR_CV = "https://docs.google.com/viewer?url=https://github.com/blademaw/cv/raw/main/resume.pdf"
+# AUTHOR_CV = "https://docs.google.com/viewer?url=https://github.com/blademaw/cv/raw/main/resume.pdf"
+AUTHOR_CV = '/features/files/cv.pdf'
 
 SHOW_ARCHIVES = True
 SHOW_FEED = False  # Need to address large feeds

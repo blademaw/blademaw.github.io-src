@@ -17,16 +17,16 @@
 	      <li><a href="{{ AUTHOR_BLOG }}" rel="me">blog</a></li>
               {% endif %}
 	      {% if AUTHOR_CV %}
-	      <li><a href="{{ AUTHOR_CV }}" rel="me">CV</a></li>
+        <span>·</span><li><a href="{{ AUTHOR_CV }}" rel="me" target="_blank">CV</a></li>
 	      {% endif %}
         {% if GITHUB_USERNAME %}
-	      <li><a class="fab fa-github" href="http://github.com/{{ GITHUB_USERNAME }}" rel="me"></a></li>
+        <span>·</span><li><a class="fab fa-github" href="http://github.com/{{ GITHUB_USERNAME }}" rel="me"></a></li>
               {% endif %}
         {% if LINKED_IN %}
-	      <li><a class="fab fa-linkedin" href="{{ LINKED_IN }}" rel="me"></a></li>
+        <span>·</span><li><a class="fab fa-linkedin" href="{{ LINKED_IN }}" rel="me"></a></li>
 	      {% endif %}
         {% if GOODREADS %}
-	      <li><a class="fab fa-goodreads" href="{{ GOODREADS }}" rel="me"></a></li>
+        <span>·</span><li><a class="fab fa-goodreads" href="{{ GOODREADS }}" rel="me"></a></li>
 	      {% endif %}
 	    </ul>
         </header>
