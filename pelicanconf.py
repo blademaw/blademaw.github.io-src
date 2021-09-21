@@ -4,7 +4,7 @@
 AUTHOR = 'Jack Oliver'
 SITENAME = 'Divide & Ponder'
 SITESUBTITLE = 'Vague ventures stumbling through computer science'
-SITEURL = ''
+SITEURL = 'https://blademaw.github.io'
 TIMEZONE = 'Australia/Melbourne'
 DEFAULT_LANG = 'en'
 
@@ -64,6 +64,9 @@ SHOW_ARCHIVES = True
 SHOW_FEED = False  # Need to address large feeds
 
 STATIC_PATHS = ['images', 'features', 'favicon.ico']
+
+# Comments
+DISQUS_SITENAME = 'blademaw-blog'
 
 # License
 # LICENSE_URL = "https://github.com/jakevdp/jakevdp.github.io-source/blob/master/LICENSE"
