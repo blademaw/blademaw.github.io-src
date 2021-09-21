@@ -8,6 +8,8 @@ Summary: A first post, solely for <br/>testing purposes
 
 This is my first post in Pelican. **Cool** or _not_?
 
+{% notebook representing-problems.ipynb cells[2:3]  %}
+
 An equation is given by:
 
 $$ \frac{1}{1+e^{-x}} $$
