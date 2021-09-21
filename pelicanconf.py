@@ -40,7 +40,9 @@ THEME = './theme/'
 
 MARKUP = ('md', )
 
-PLUGINS = ['render_math', 'liquid_tags.img', 'liquid_tags.notebook']
+PLUGINS = ['render_math', 'liquid_tags.img',
+             'liquid_tags.notebook', 'liquid_tags.literal',
+             'liquid_tags.include_code']
 PLUGIN_PATHS = ['./plugins/pelican-plugins']
 # LIQUID_TAGS = ["literal", "video", "include_code"]
 LIQUID_CONFIGS = (("IGNORE_FILES", ".ipynb_checkpoints", ""), ("CODE_DIR", "features/code", ""), ("NOTEBOOK_DIR", "features/notebooks", "")

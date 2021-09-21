@@ -13,4 +13,4 @@ or computer science. Sometimes I end up uploading them to this blog and talking 
 **Details about this blog**:
 
 * This blog is built with [Pelican](https://blog.getpelican.com/){:target="_blank"}, using a (slightly tweaked) theme from [Jake VanderPlas](https://github.com/jakevdp/jakevdp.github.io-source){:target="_blank"}.
-* Images on this blog such as the following: {% img styled /images/lorenz.png 200 150 "Figure 1: The Lorenz System" "" %} are implemented using a [modified version](#) of Jake VanderPlas' [Liquid Tags](https://github.com/pelican-plugins/liquid-tags){:target="_blank"} and styling inspired by [Heiswayi Nrird](https://heiswayi.nrird.com/image-caption-using-liquid-syntax){:target="_blank"}.
+* Images on this blog such as the following: {% img styled /images/lorenz.png 200 150 "Figure 1: The Lorenz System" "" %} are implemented using a [modified version](/pages/about/customizing-liquid) of Jake VanderPlas' [Liquid Tags](https://github.com/pelican-plugins/liquid-tags){:target="_blank"} and styling inspired by [Heiswayi Nrird](https://heiswayi.nrird.com/image-caption-using-liquid-syntax){:target="_blank"}.
