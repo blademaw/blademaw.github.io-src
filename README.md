@@ -13,6 +13,8 @@ Install related non-local plugins:
 $ python -m pip install pelican-render-math
 ```
 
+Make adjustments to `liquid-tags/img.py` by replacing `img.py` with [this file](https://blademaw.github.io/features/code/img_ex.py).
+
 Ensure local version builds via
 ``` 
 $ make html && make serve 
@@ -26,6 +28,6 @@ $ make publish
 ## Acknowledgement
 
 - Site built under Pelican with Python
-- Theme adapted from Jake VanderPlas' github blog.
+- Theme adapted from [Jake VanderPlas](https://github.com/jakevdp/jakevdp.github.io-source)' github blog.
 - Analytics by Google
 - Comments by Disqus
