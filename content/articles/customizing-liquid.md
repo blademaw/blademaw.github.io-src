@@ -1,7 +1,6 @@
 Title: Setting up & Customizing Liquid Tags in Pelican
 Date: 2021-09-21 16:00
 Tags: python, pelican, plugins
-[id1]: ## "your hover text"
 
 ## A word on `liquid-tags` and Pelican plugins
 
@@ -10,9 +9,9 @@ Without delving in too deep, <abbr title="'Liquid tags' are the actual tag objec
     :::liquid
     {% literal notebook my-jupyter-notebook.ipynb cells[2:3]  %}
 
-displays cells 2–3 of a Jupyter notebook:
+displays cells `[2–3)` (so cell 2) of a Jupyter notebook:
 
-{% notebook representing-problems.ipynb cells[2:3]  %}
+{% notebook example-notebook.ipynb cells[1:2]  %}
 
 They follow a simplistic structure — enclosed in curly braces and percent signs, the first argument is the type of liquid tag to be integrated, and the following arguments are content parameters, usually a directory to a file, and aesthetic tuners.
 
