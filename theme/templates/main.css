@@ -7,6 +7,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
+
 a {
   color: #007EE5;
   text-decoration: none;
@@ -17,7 +18,7 @@ a:hover {
 }
 header.main-header {
   background: none repeat scroll 0% 0% #205F29;
-  margin-bottom: 0px;
+  margin-bottom: 20px;
 }
 header.main-header a {
   color: #fff;

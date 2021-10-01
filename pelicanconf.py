@@ -38,16 +38,31 @@ DEFAULT_PAGINATION = 10
 # Theme
 THEME = './theme/'
 
-MARKUP = ('md', )
+MARKUP = ['md']
 
-PLUGINS = ['render_math', 'liquid_tags.img',
-             'liquid_tags.notebook', 'liquid_tags.literal',
-             'liquid_tags.include_code',
-             'liquid_tags.vega']
-PLUGIN_PATHS = ['./plugins/pelican-plugins']
-# LIQUID_TAGS = ["literal", "video", "include_code"]
-LIQUID_CONFIGS = (("IGNORE_FILES", ".ipynb_checkpoints", ""), ("CODE_DIR", "features/code", ""), ("NOTEBOOK_DIR", "features/notebooks", "")
-) #
+# PLUGINS = ['render_math', 'liquid_tags.img',
+#              'liquid_tags.notebook', 'liquid_tags.literal',
+#              'liquid_tags.include_code',
+            #  'liquid_tags.vega']
+
+from pelican_jupyter import liquid as nb_liquid
+
+PLUGIN_PATHS = ['./plugins', './plugins/pelican-plugins']
+# PLUGINS = ['render_math', 'summary',
+#      'liquid_tags.img', 'liquid_tags.notebook',
+#      'liquid_tags.include_code', 'liquid_tags.literal']
+
+PLUGINS = ['render_math', 'summary', 'liquid_tags.notebook', 
+            'liquid_tags.img', 
+            'liquid_tags.literal',
+            'liquid_tags.include_code']
+
+LIQUID_CONFIGS = (("IGNORE_FILES", ".ipynb_checkpoints", ""),
+ ("CODE_DIR", "features/code", ""),
+  ("NOTEBOOK_DIR", "", "")
+)
+
+NOTEBOOK_DIR = 'features/notebooks'
 
 ENABLE_MATHJAX = True # testing this
 EXTRA_HEADER = open('_nb_header.html', encoding='utf-8').read()

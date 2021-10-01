@@ -34,6 +34,9 @@
             if (window.MathJax) {
                 // MathJax loaded
                 MathJax.Hub.Config({
+                    tex: {
+                        packages: {'[+]': ['boldsymbol', 'amsmath']}
+                    },
                     tex2jax: {
                         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
                         displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
@@ -49,9 +52,6 @@
         init_mathjax();
         </script>
     	{% endif %}
-
-        {% block extra_head %}
-        {%endblock%}
     </head>
 
     <body>
@@ -75,9 +75,6 @@
                         {% endif %}
                         {% if SHOW_ARCHIVES %}
                             <li><a href="/archives.html" title="Archive">Archive</a></li>
-                        {% endif %}
-                        {% if SHOW_FEED %}
-                            <li><a class="nodec icon-rss" href="/{{ FEED_ALL_ATOM }}" title="jakevdp.github.io RSS feed" rel="me"></a></li>
                         {% endif %}
                     </ul>
                 </nav>
