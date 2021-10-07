@@ -2,6 +2,3 @@
 	path = output
 	url = https://github.com/blademaw/blademaw.github.io.git
 
-[submodule "plugins/pelican-plugins/liquid_tags"]
-	path = plugins/pelican-plugins/liquid_tags
-	url = https://github.com/pelican-plugins/liquid-tags
