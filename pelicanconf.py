@@ -72,7 +72,7 @@ ABOUT_PAGE = '/pages/about.html'
 GITHUB_USERNAME = 'blademaw'
 LINKED_IN = 'https://www.linkedin.com/in/jack-roy-oliver/'
 GOODREADS = 'https://www.goodreads.com/user/show/104565077-jack-oliver'
-AUTHOR_BLOG = 'http://blademaw.github.io'
+AUTHOR_BLOG = 'https://medium.com/@jack_oliver'
 # AUTHOR_CV = "https://docs.google.com/viewer?url=https://github.com/blademaw/cv/raw/main/resume.pdf"
 AUTHOR_CV = '/features/files/cv.pdf'
 
@@ -83,7 +83,3 @@ STATIC_PATHS = ['images', 'features', 'favicon.ico']
 
 # Comments
 DISQUS_SITENAME = 'blademaw-blog'
-
-# License
-# LICENSE_URL = "https://github.com/jakevdp/jakevdp.github.io-source/blob/master/LICENSE"
-# LICENSE = "MIT"

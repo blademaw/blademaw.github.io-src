@@ -306,6 +306,44 @@ def notebook(preprocessor, tag, markup):
     # fixing altair data references
     content = re.sub(r'("url": ")(mydata\/)', r'\1/features/\2', content)
 
+    # adding code collapse functionality
+    findstart = r'(<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># &lt;!-- collapse=True --&gt;</span>)'
+    findend = r'(<span class="c1"># &lt;end collapse&gt;</span>)'
+
+    startrep = '<div class="collapseheader inner_cell"><span style="font-weight: bold;">Expand Code</span>\
+        <div class="input_area" style="display:none">\
+            <div class=" highlight hl-ipython3"><pre><span></span>'
+    endrep = r'</div></div>'
+
+    content = re.sub(findstart, startrep, content)
+    content = re.sub(findend, endrep, content)
+    if "&lt;!-- collapse=True --&gt" in content:
+        print(True)
+
+    content = content + """<style type="text/css"> div.collapseheader {
+    width=100%;
+    background-color:#d3d3d3;
+    padding: 2px;
+    cursor: pointer;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+</style>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    $("div.collapseheader").click(function () {
+    $header = $(this).children("span").first();
+    $codearea = $(this).children(".input_area");
+    console.log($(this).children());
+    $codearea.slideToggle(500, function () {
+        $header.text(function () {
+            return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+        });
+    });
+});
+});
+</script>"""
+
     # Fix CSS
     fix_css = preprocessor.configs.getConfig("IPYNB_FIX_CSS", True)
     ignore_css = preprocessor.configs.getConfig("IPYNB_SKIP_CSS", False)
@@ -315,7 +353,6 @@ def notebook(preprocessor, tag, markup):
     # TODO: add bleach parsing for safe html
     # https://github.com/Python-Markdown/markdown/commit/7f63b20b819b83afef0ddadc2e210ddce32a2be3
     content = preprocessor.configs.htmlStash.store(content)
-    
     
     
     # inserts for testing
