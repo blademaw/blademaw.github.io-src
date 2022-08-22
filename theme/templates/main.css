@@ -367,3 +367,22 @@ figcaption {
 #cent {
   text-align: center;
 }
+
+.proj-cont {
+  padding-top: 6%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.proj {
+  width: 50%;
+  background: blue;
+  text-align: center;
+  justify-content: space-around;
+  padding: 10%;
+}
+
+.proj-design {
+  padding: 2%;
+  background-color: red;
+}

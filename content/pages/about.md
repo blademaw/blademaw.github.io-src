@@ -4,8 +4,9 @@ Template: about
 
 <img src="/images/me.jpg" align="left" width="150" style="padding-right:20px;"/>
 Hi! — My name is Jack, and I'm an aspiring data scientist with a passion for computer science. 
-I'm currently completing a Bachelor's degree of Computer Science
-at [Monash University](https://www.monash.edu/){:target="_blank"}. When I'm not occupied with school,
+I'm currently pursuing a Master's degree in Computer Science at the University of Melbourne
+after recently completing my Bachelor's degree of Computer Science
+at Monash University. When I'm not occupied with school,
 I enjoy crafting side-projects that give me space to experiment and explore topics in data science
 or computer science. Sometimes I end up uploading them to this blog and talking about them.
 <br/>
@@ -15,3 +16,4 @@ or computer science. Sometimes I end up uploading them to this blog and talking 
 * This blog is built with [Pelican](https://blog.getpelican.com/){:target="_blank"}, using a (slightly tweaked) theme from [Jake VanderPlas](https://github.com/jakevdp/jakevdp.github.io-source){:target="_blank"}.
 * Images on this blog such as the following: {% img styled /images/lorenz.png 200 150 "Figure 1: The Lorenz System" "" %} are implemented using a [modified version]({filename}/articles/customizing-liquid.md) of Jake VanderPlas' [Liquid Tags](https://github.com/pelican-plugins/liquid-tags){:target="_blank"} and styling inspired by [Heiswayi Nrird](https://heiswayi.nrird.com/image-caption-using-liquid-syntax){:target="_blank"}.
 * Jupyter notebooks are integrated with a 'Frankensteined' version of the liquid tag — I'm using an environment with `notebook` and `nbconvert` versions `5.6.0`, and my `liquid_tags` plugin directory has an additional `core.py` file from the legacy `ipynb.liquid` Pelican plugin, and modified `notebook.py`. You can click [here](/features/code/core.py) and [here](/features/code/notebook.py) to download both files, respectively.
+* This blog's name is a pun on the programming paradigm "divide and conquer," and I *would* change it to something less shameful, but it is simply too much hassle to update all of the Pelican source files.
