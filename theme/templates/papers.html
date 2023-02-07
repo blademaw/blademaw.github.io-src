@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }}{% endblock %}
+{% block headerimg %}{% if page.headerimg %}{{ page.headerimg }}{% else %}{{ DEFAULT_HEADER_BG }}{% endif %}{% endblock %}
+
+{% block content %}
+
+<div class="container post">
+    <article>
+        <header class="papers">
+          <h1>{{ page.title }}</h1>
+          {% if page.date %}
+          <time datetime="page.date.isoformat()" pubdate>{{ page.locale_date }}</time>
+          {% endif %}
+        </header>
+
+        <div class="article_content">
+            {{ page.content }}
+        </div>
+
+        <!-- start of papers showcase -->
+        <div class="container projs">
+            <div class="container proj-row">
+                <div class="proj-img">
+                    <img class="paperimg" src="/features/papers/biofilm.png" alt="biofilm paper">
+                </div>
+
+                <div class="proj-contents">
+                    <p style="font-size: larger; font-weight: bolder;"> Evaluating biofilm prevention strategies with agent-based modelling  <a href="/features/papers/biofilms.pdf" target="_blank"><i class="fas fa-download"></i></a></p>
+                    <p>Jack Oliver, Bocong Zhao</p>
+                    <p>24/10/2022</p>
+                    <p>Exploratory use of agent-based modelling for implementing and evaluating effectiveness of methods for biofilm infection treatment. Written as part of a class on computational modelling and simulation.</p>
+                </div>
+            </div>
+
+            <div class="container proj-row">
+                <div class="proj-img">
+                    <img class="paperimg" src="/features/papers/hke.png" alt="Hong Kong English paper">
+                </div>
+
+                <div class="proj-contents">
+                    <p style="font-size: larger; font-weight: bolder;">Hong Kong English: creation, characteristics, and identity  <a href="/features/papers/HKE.pdf" target="_blank"><i class="fas fa-download"></i></a></p>
+                    <p>Jack Oliver</p>
+                    <p>07/11/2021</p>
+                    <p>Exploration and analysis of the background, local context, and salient features of Hong Kong English. Written for an introductory linguistics class.</p>
+                </div>
+            </div>
+
+        </div>
+        
+    </article>
+</div>
+
+<style type="text/css">
+    {% include 'main.css' %}
+</style>
+
+
+{% endblock %}
