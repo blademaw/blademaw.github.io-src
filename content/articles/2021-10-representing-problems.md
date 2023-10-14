@@ -1,5 +1,5 @@
 Title: Problem Representation in Python, and N-Queens, Revisited
-Date: 2021-10-24 12:00
+Date: 2024-10-24 12:00
 Tags: python, optimization
 Status: draft
 Slug: problem-representation-10

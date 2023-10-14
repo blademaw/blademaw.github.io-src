@@ -1,5 +1,5 @@
 Title: Problem Representation in Python, and N-Queens, Revisited
-Date: 2021-09-30 12:00
+Date: 2024-09-30 12:00
 Tags: python, brute-force, simulated-annealing, stochastic
 Status: draft
 Slug: problem-representation-09
