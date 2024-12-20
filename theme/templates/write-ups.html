@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}Write-ups{% endblock %}
+{% block headerimg %}{% if page.headerimg %}{{ page.headerimg }}{% else %}{{ DEFAULT_HEADER_BG }}{% endif %}{% endblock %}
+
+{% block content %}
+<div class="container index">
+  <header class="papers">
+    <h1>Write-ups</h1>
+  </header>
+
+  <div class="article_content">
+    <p>A collection of write-ups for puzzles and challenges.</p>
+  </div>
+
+  {% for article in hidden_articles + articles %}
+    {% if 'write-up' in article.tags %}
+      <article>
+        <header>
+          <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+          <time datetime="" title="{{ article.date.isoformat() }}" pubdate>{{ article.locale_date }}</time>
+        </header>
+
+        <div class="article_content">
+          {{ article.summary }}
+        </div>
+
+        <div class="meta">
+          <div>
+            <a href="{{ SITEURL }}/{{ article.url }}" class="read_more">Read more</a>
+          </div>
+
+          <div>
+              {% for tag in article.tags %}
+                <a href="{{ SITEURL }}/{{ tag.url }}" class="tag">{{ tag }}</a>
+              {% endfor %}
+          </div>
+
+        </div>
+
+      </article>
+      <div class="separator"></div>
+    {% endif %}
+  {% endfor %}
+
+  {# Optional: Pagination (you might need to adjust this based on your Pelican setup) #}
+  <nav class="pagination row">
+    <div class="col-xs-6 left">
+      {% if previous_page %}
+        <a class="prev" href="{{ SITEURL }}/{{ previous_page.url }}">&#8592; Past</a>
+      {% endif %}
+    </div>
+    <div class="col-xs-6 right">
+      {% if next_page %}
+        <a class="next" href="{{ SITEURL }}/{{ next_page.url }}">Future &#8594;</a>
+      {% endif %}
+    </div>
+  </nav>
+
+</div>
+{% endblock %}

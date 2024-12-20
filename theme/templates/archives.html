@@ -7,6 +7,7 @@
     <article>
         <h1 style="margin-bottom: 30px;">Archives and tags</h1>
 
+        <!-- NOTE: this does not include hidden articles (to fix later) -->
         <div class="meta" style="margin-bottom: 30px;">
             {% for tag, articles in tags %}
                 <a href="{{ SITEURL }}/{{ tag.url }}" class="tag">{{ tag }} ({{ articles | length }})</a>
@@ -14,7 +15,7 @@
         </div>
 
         <ul class="double-list">
-        {% for article in articles %}
+        {% for article in (articles + hidden_articles)|sort(attribute='date', reverse=True) %}
             <li>
                 <a href='/{{ article.url }}'>
                     <h2>{{ article.title }}</h2>
