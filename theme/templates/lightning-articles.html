@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block extrastyle %}<style>{% include 'lightning.css' %}</style>{% endblock %}
+{% block title %}⚡ Lightning articles{% endblock %}
+{% block headerimg %}{% if page.headerimg %}{{ page.headerimg }}{% else %}{{ DEFAULT_HEADER_BG }}{% endif %}{% endblock %}
+
+{% block content %}
+<div class="container index">
+  <h1>⚡ Lightning articles</h1>
+    <p style="padding-bottom: 20px;">Short, digestible posts on topics I'm currently learning about.</p>
+    <!-- <div class="separator"></div> -->
+
+        {% for article in hidden_articles + articles %}
+            {% if '⚡' in article.tags %}
+              <article class="lightning-article">
+                <header>
+                  <h3>
+                    <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+                    <span class="date">({{ article.locale_date }})</span>
+                  </h3>
+                </header>
+                
+                <div class="article-preview">
+                    {{ article.summary }}
+                </div>
+
+                <div class="meta">
+                  <div>
+                      {% for tag in article.tags %}
+                        <a href="{{ SITEURL }}/{{ tag.url }}" class="tag">{{ tag }}</a>
+                      {% endfor %}
+                  </div>
+
+                  <a href="{{ SITEURL }}/{{ article.url }}" class="read_more">Read more</a>
+                </div>
+                
+              </article>
+            <div class="separator"></div>
+            {% endif %}
+        {% endfor %}
+
+  {# Optional: Pagination (you might need to adjust this based on your Pelican setup) #}
+  <nav class="pagination row">
+    <div class="col-xs-6 left">
+      {% if previous_page %}
+        <a class="prev" href="{{ SITEURL }}/{{ previous_page.url }}">&#8592; Past</a>
+      {% endif %}
+    </div>
+    <div class="col-xs-6 right">
+      {% if next_page %}
+        <a class="next" href="{{ SITEURL }}/{{ next_page.url }}">Future &#8594;</a>
+      {% endif %}
+    </div>
+  </nav>
+
+</div>
+{% endblock %}

@@ -17,6 +17,7 @@
         <link rel="stylesheet" type="text/css" href="/theme/css/icons.css"/>
         <style>{% include 'pygments.css' %}</style>
         <style>{% include 'main.css' %}</style>
+        {% block extrastyle %}{% endblock %}
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -40,7 +41,8 @@
                     },
                     tex2jax: {
                         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                        displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+                        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                        processEscapes: true
                     },
                     displayAlign: 'center', // Change this to 'center' to center equations.
                     "HTML-CSS": {
@@ -76,6 +78,7 @@
                             </ul>
                         </li>
                         <li><a href="/pages/papers.html" title="Papers">Papers</a></li>
+                        <li><a href="/pages/lightning-articles.html" title="Lightning articles">⚡</a></li>
                         <li><a href="/pages/write-ups.html" title="Write-ups">Write-ups</a></li>
                         {% if ABOUT_PAGE %}
                             <li><a href="{{ ABOUT_PAGE }}" title="About">About</a></li>
