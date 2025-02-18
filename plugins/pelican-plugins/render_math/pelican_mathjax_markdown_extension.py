@@ -9,9 +9,8 @@ citizen" of the blog
 """
 
 import markdown
+from markdown.util import AtomicString, etree
 
-from markdown.util import etree
-from markdown.util import AtomicString
 
 class PelicanMathJaxPattern(markdown.inlinepatterns.Pattern):
     """Inline markdown processing that matches mathjax"""
@@ -26,9 +25,12 @@ class PelicanMathJaxPattern(markdown.inlinepatterns.Pattern):
         node = markdown.util.etree.Element(self.tag)
         node.set('class', self.math_tag_class)
 
-        prefix = '\\(' if m.group('prefix') == '$' else m.group('prefix')
-        suffix = '\\)' if m.group('suffix') == '$' else m.group('suffix')
-        node.text = markdown.util.AtomicString(prefix + m.group('math') + suffix)
+        # HACK: this wasn't working, so I just ignored this replacement
+        # prefix = '\\(' if m.group('prefix') == '$' else m.group('prefix')
+        # suffix = '\\)' if m.group('suffix') == '$' else m.group('suffix')
+        prefix = '$' if m.group('prefix') == '$' else m.group('prefix')
+        suffix = '$' if m.group('suffix') == '$' else m.group('suffix')
+        node.text = markdown.util.AtomicString(prefix + " " + m.group('math').strip() + " " + suffix)
 
         # If mathjax was successfully matched, then JavaScript needs to be added
         # for rendering. The boolean below indicates this

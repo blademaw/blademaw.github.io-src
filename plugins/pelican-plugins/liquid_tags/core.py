@@ -9,7 +9,6 @@ import jinja2
 from nbconvert.exporters import HTMLExporter
 from pygments.formatters import HtmlFormatter
 
-
 try:
     # Jupyter
     from traitlets import Integer
@@ -28,7 +27,8 @@ try:
     from nbconvert.filters.highlight import _pygments_highlight
 except ImportError:
     # IPython < 2.0
-    from nbconvert.filters.highlight import _pygment_highlight as _pygments_highlight
+    from nbconvert.filters.highlight import \
+        _pygment_highlight as _pygments_highlight
 
 try:
     from nbconvert.nbconvertapp import NbConvertApp

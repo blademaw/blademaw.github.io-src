@@ -33,7 +33,7 @@ the math.  See README for more details.
 import os
 import sys
 
-from pelican import signals, generators
+from pelican import generators, signals
 
 try:
     from bs4 import BeautifulSoup
@@ -41,7 +41,7 @@ except ImportError as e:
     BeautifulSoup = None
 
 try:
-    from . pelican_mathjax_markdown_extension import PelicanMathJaxExtension
+    from .pelican_mathjax_markdown_extension import PelicanMathJaxExtension
 except ImportError as e:
     PelicanMathJaxExtension = None
 
@@ -76,11 +76,12 @@ def process_settings(pelicanobj):
     mathjax_settings['mathjax_font'] = 'default'  # forces mathjax to use the specified font.
     mathjax_settings['process_summary'] = BeautifulSoup is not None  # will fix up summaries if math is cut off. Requires beautiful soup
     mathjax_settings['message_style'] = 'normal'  # This value controls the verbosity of the messages in the lower left-hand corner. Set it to "none" to eliminate all messages
-    mathjax_settings['font_list'] = ['STIX', 'TeX'] # Include in order of preference among TeX, STIX-Web, Asana-Math, Neo-Euler, Gyre-Pagella, Gyre-Termes and Latin-Modern
+    mathjax_settings['font_list'] = ['TeX'] #['STIX', 'TeX'] # Include in order of preference among TeX, STIX-Web, Asana-Math, Neo-Euler, Gyre-Pagella, Gyre-Termes and Latin-Modern
     mathjax_settings['equation_numbering'] = 'none' # AMS, auto, none
 
     # Source for MathJax
-    mathjax_settings['source'] = "'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML'"
+    # mathjax_settings['source'] = "'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML'"
+    mathjax_settings['source'] = "'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML'"
 
     # Get the user specified settings
     try:
@@ -227,8 +228,9 @@ def configure_typogrify(pelicanobj, mathjax_settings):
         return
 
     try:
-        import typogrify
         from distutils.version import LooseVersion
+
+        import typogrify
 
         if LooseVersion(typogrify.__version__) < LooseVersion('2.0.7'):
             raise TypeError('Incorrect version of Typogrify')
