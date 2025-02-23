@@ -52,10 +52,14 @@ PLUGIN_PATHS = ['./plugins', './plugins/pelican-plugins']
 #      'liquid_tags.img', 'liquid_tags.notebook',
 #      'liquid_tags.include_code', 'liquid_tags.literal']
 
-PLUGINS = ['render_math', 'summary', 'liquid_tags.notebook', 
-            'liquid_tags.img', 
-            'liquid_tags.literal',
-            'liquid_tags.include_code']
+PLUGINS = [
+    'summary',
+    'liquid_tags.notebook',
+    # 'render_math', 
+    'liquid_tags.img', 
+    'liquid_tags.literal',
+    'liquid_tags.include_code'
+]
 
 LIQUID_CONFIGS = (("IGNORE_FILES", ".ipynb_checkpoints", ""),
  ("CODE_DIR", "features/code", ""),

@@ -62,7 +62,7 @@ def process_settings(pelicanobj):
     # will be used for
 
     # Default settings
-    mathjax_settings['auto_insert'] = True  # if set to true, it will insert mathjax script automatically into content without needing to alter the template.
+    mathjax_settings['auto_insert'] = False  # if set to true, it will insert mathjax script automatically into content without needing to alter the template.
     mathjax_settings['align'] = 'center'  # controls alignment of of displayed equations (values can be: left, right, center)
     mathjax_settings['indent'] = '0em'  # if above is not set to 'center', then this setting acts as an indent
     mathjax_settings['show_menu'] = 'true'  # controls whether to attach mathjax contextual menu
